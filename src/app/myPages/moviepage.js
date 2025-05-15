@@ -24,7 +24,7 @@ export default function MoviePage() {
     };
 
     const handleDelete = (movieIndex) => {
-        setMovies(movies.filter((_, index) => index !== movieIndex));
+        setMovies(movies.filter((movie, index) => index !== movieIndex));
     };
 
     const handleSort = () => {
