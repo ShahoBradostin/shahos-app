@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 600px;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 16px 10px -4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+}
+
+h1,
+h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: 500;
+    margin-top: 10px;
+    display: block;
+}
+
+#add-movie-form input,
+#add-movie-form select {
+    margin-bottom: 15px;
+}
+
+.add-btn {
+    margin-top: 2px;
+    display: flex;
+}
+
+#movies {
+    list-style: none;
+    padding-left: 0;
+}
+
+#movies li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+img{
+    width: 30px;
+    height: 30px;
+}
+
+.movie-title {
+    font-weight: 500;
+    flex: 1;
+}
+
+.sort-btn {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.sort-btn {
+    flex: 1;
+}
