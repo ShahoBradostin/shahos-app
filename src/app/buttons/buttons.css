@@ -1,0 +1,8 @@
+.sort-btn {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: auto;
+    justify-content: center;
+    margin-top: 20px;
+}

@@ -21,6 +21,8 @@ fieldset {
     border: none;
     padding: 0;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
@@ -35,7 +37,11 @@ label {
 }
 
 .add-btn {
-    margin-top: 2px;
+    width: 100px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-top: 20px;
     display: flex;
 }
 
@@ -46,8 +52,9 @@ label {
 
 #movies li {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     background-color: #eee;
     border-radius: 4px;
     padding: 10px 15px;
@@ -55,21 +62,14 @@ label {
 }
 
 img{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     width: 30px;
     height: 30px;
 }
 
 .movie-title {
     font-weight: 500;
-    flex: 1;
-}
-
-.sort-btn {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.sort-btn {
     flex: 1;
 }

@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import "./moviepage.css";
+import SortButtons from "../buttons/buttons";
 
 export default function MoviePage() {
     const [movies, setMovies] = useState([]);
@@ -24,14 +25,7 @@ export default function MoviePage() {
     };
 
     const handleDelete = (movieIndex) => {
-        setMovies(movies.filter((movie, index) => index !== movieIndex));
-    };
-
-    const handleSort = () => {
-        const sorted = [...movies].sort((a, b) =>
-            a.title.localeCompare(b.title, "sv", { sensitivity: "base" })
-        );
-        setMovies(sorted);
+        setMovies(movies.filter((_, index) => index !== movieIndex));
     };
 
     const renderStars = (count) => {
@@ -51,7 +45,7 @@ export default function MoviePage() {
                     <legend>Lägg till en film</legend>
 
                     <label htmlFor="title-field">Titel:</label>
-                    <input type="text" id="title-field" className="form-control" value={title} onChange={(e) => setTitle(e.target.value)}/>
+                    <input type="text" id="title-field" className="form-control" value={title} onChange={(e) => setTitle(e.target.value)} />
 
                     <label htmlFor="rating-field">Betyg:</label>
                     <select id="rating-field" className="form-control" value={rating} onChange={(e) => setRating(e.target.value)}>
@@ -64,7 +58,9 @@ export default function MoviePage() {
                     </select>
 
                     <input type="submit" className="add-btn" value="Spara film" />
-                    <button type="button" className="sort-btn" onClick={handleSort}> Sortera filmer (alfabetisk)</button>
+
+                    <SortButtons movies={movies} setMovies={setMovies}></SortButtons>
+
                 </fieldset>
             </form>
 
@@ -76,7 +72,7 @@ export default function MoviePage() {
                     <li key={index} data-grade={movie.rating} data-title={movie.title}>
                         {movie.title}
                         {renderStars(movie.rating)}
-                        <img src="/images/delete.png" alt="Delete movie" className="delete-movie-icon" onClick={() => handleDelete(index)}/>
+                        <img src="/images/delete.png" alt="Delete movie" className="delete-movie-icon" onClick={() => handleDelete(index)} />
                     </li>
                 ))}
             </ul>
