@@ -1,0 +1,19 @@
+.movie-stats {
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.starz{
+    display: flex;
+    align-items: center;
+    gap: 10;
+    flex-direction: row;
+    margin-right: 10px;
+}
+
+.starz > img{
+    margin-left: 10px;
+}

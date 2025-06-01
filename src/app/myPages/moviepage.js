@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "./moviepage.css";
 import SortButtons from "../buttons/buttons";
+import MovieStats from "../MovieStats/movieStats";
 
 export default function MoviePage() {
     const [movies, setMovies] = useState([]);
@@ -45,10 +46,21 @@ export default function MoviePage() {
                     <legend>Lägg till en film</legend>
 
                     <label htmlFor="title-field">Titel:</label>
-                    <input type="text" id="title-field" className="form-control" value={title} onChange={(e) => setTitle(e.target.value)} />
+                    <input
+                        type="text"
+                        id="title-field"
+                        className="form-control"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
 
                     <label htmlFor="rating-field">Betyg:</label>
-                    <select id="rating-field" className="form-control" value={rating} onChange={(e) => setRating(e.target.value)}>
+                    <select
+                        id="rating-field"
+                        className="form-control"
+                        value={rating}
+                        onChange={(e) => setRating(e.target.value)}
+                    >
                         <option value="0">Välj betyg här...</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -59,12 +71,13 @@ export default function MoviePage() {
 
                     <input type="submit" className="add-btn" value="Spara film" />
 
-                    <SortButtons movies={movies} setMovies={setMovies}></SortButtons>
-
+                    <SortButtons movies={movies} setMovies={setMovies} />
                 </fieldset>
             </form>
 
             <hr />
+
+            <MovieStats movies={movies} />
 
             <h2>Filmer</h2>
             <ul id="movies">
@@ -72,7 +85,12 @@ export default function MoviePage() {
                     <li key={index} data-grade={movie.rating} data-title={movie.title}>
                         {movie.title}
                         {renderStars(movie.rating)}
-                        <img src="/images/delete.png" alt="Delete movie" className="delete-movie-icon" onClick={() => handleDelete(index)} />
+                        <img
+                            src="/images/delete.png"
+                            alt="Delete movie"
+                            className="delete-movie-icon"
+                            onClick={() => handleDelete(index)}
+                        />
                     </li>
                 ))}
             </ul>

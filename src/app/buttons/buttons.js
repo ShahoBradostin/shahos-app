@@ -10,7 +10,7 @@ export default function SortButtons({ movies, setMovies }) {
     };
 
     const sortByRating = () => {
-        const sorted = [...movies].sort((a, b) => a.rating - b.rating);
+        const sorted = [...movies].sort((a, b) => b.rating - a.rating);
         setMovies(sorted);
     };
 
